@@ -1,0 +1,77 @@
+<div class="editorContainer">
+  <div class="web" id="leftBlock">
+    <div class="webHeader">
+      <span class="logo">
+        <img src="assets/logo.png" />
+      </span>
+      <div class="actionBar">
+        <span class="explainText">Select </span> <input id="selectedPath" placeholder="[css selector]" [(ngModel)]="selectedPath" />
+        <span class="resetButton" (click)="clearPath()"><i class="icon ion-close-circled"></i></span>
+        <span class="explainText">and</span>
+        <span class="drop"><span class="title" [innerText]="selectedAction"></span>
+          <ul>
+            <li><span (click)="selectedAction='extract the text'">Extract the text</span></li>
+            <li><span (click)="selectedAction='click element'">Click element</span></li>
+            <li><span (click)="selectedAction='enter text'">Enter text</span></li>
+          </ul>
+        </span>
+        <span class="addActionButton" (click)="addAction(selectedPath, selectedAction)"><i class="icon ion-log-in"></i></span>
+      </div>
+    </div>
+    <div class="urlHeader">
+      <input [(ngModel)]="unsafeUrl" (keyup.enter)="updateUrl(unsafeUrl, true)" />
+    <span class="reload" (click)="reloadUrl()">↺</span>
+    </div>
+    <iframe [src]="url" id="webframe" sandbox="allow-forms allow-scripts"></iframe>
+  </div>
+  <div class="horizontalHandle" id="horizontalHandle" (mousedown)="resize($event, 'vertical', 'leftBlock', 'rightBlock')"></div>
+  <div class="editor" id="rightBlock">
+    <div class="actionBar">
+      <span (click)="execute(code)" class="executeButton button">Execute</span>
+      <span (click)="continue()" class="continueButton button" *ngIf="showDoneButton">Done, create API!</span>
+    </div>
+    <div class="steps" id="steps">
+
+      <div class="step" *ngFor="let step of steps; let i = index">
+        <span *ngIf="step.action === 'extract the text'"><i class="icon ion-android-radio-button-on"></i>Extract text for selector '{{step.selector}}'</span>
+        <span *ngIf="step.action === 'Open URL'"><i class="icon ion-link"></i> Open URL: '{{step.property}}'</span>
+        <span *ngIf="step.action === 'click element'"><i class="icon ion-mouse"></i> Click 1st element matching: '{{step.selector}}'</span>
+        <span *ngIf="step.action === 'enter text'"><i class="icon ion-document-text"></i> Type '{{step.property}}' into '{{step.selector}}'</span>
+        <span *ngIf="step.action === 'custom code'"><i class="icon ion-document-text"></i> Run custom code</span>
+        <span class="actionButtons">
+          <span><i class="icon ion-edit" (click)="step.showEdit = !step.showEdit"></i></span><span><i class="icon ion-ios-trash" (click)="removeStep(i)"></i></span>
+        </span>
+        <div class="edit" *ngIf="step.showEdit">
+          <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
+          <p *ngIf="step.property"><span>Property:</span><input [(ngModel)]="step.property"/><p>
+          <p *ngIf="step.property">The value can be set by supplying the get parameter '{{step.parameter}}'<p>
+          <div *ngIf="step.action === 'custom code'" ace-editor
+               [text]="step.property"
+               [mode]="'javascript'"
+               [theme]="'tomorrow_night'"
+               [options]="editorOptions"
+               [readOnly]="false"
+               (textChanged)="codeChanged($event)"
+               style="display:block; height: 80vh; width:100%" id="editor"></div>
+        </div>
+      </div>
+    </div>
+    <div class="verticalHandle" id="verticalHandle" (mousedown)="resize($event, 'horizontal', 'steps', 'result')"></div>
+
+
+    <div ace-editor
+         [(text)]="result"
+         [mode]="'json'"
+         [theme]="'tomorrow_night'"
+         [options]="resultOptions"
+         [readOnly]="true"
+         style="display:block; height: 80vh; width:100%" id="result"></div>
+  </div>
+
+  <!-- <div class="tutorial" *ngIf="!firstTime">
+    <p>Hey! It looks like you are using Extracty for the first time! <br />Please watch this 20 seconds tutorial video:</p>
+    <iframe width="800" height="450" src="https://www.youtube.com/embed/vqc8oezvs8I?autoplay=1" frameborder="0" allowfullscreen></iframe>
+    <p class="continueButton" (click)="hideTutorial()">Continue</p>
+  </div> -->
+
+</div>

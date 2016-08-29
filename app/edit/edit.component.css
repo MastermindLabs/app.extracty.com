@@ -1,0 +1,309 @@
+.tutorial {
+  position: absolute;
+  z-index: 1000;
+  right: 0px;
+  top: 0px;
+  background: rgba(64,65,66,0.9);
+  height: 100vh;
+  width: 100vw;
+  padding: 50px;
+  box-sizing: border-box;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.3em;
+  text-align: center;
+}
+.tutorial p {
+  margin: 50px;
+}
+.tutorial .continueButton {
+  font-size: 0.9em;
+  font-weight: 600;
+  cursor: pointer;
+}
+.webHeader {
+  width: 100%;
+  height: 60px;
+  background-color: #63acd6;
+}
+.webHeader .logo {
+  font-size: 26px;
+  text-align: center;
+  padding-left: 20px;
+  background: #63acd6;
+  letter-spacing: -0.59px;
+  color: #fff;
+  line-height: 70px;
+}
+.webHeader .logo img {
+  height: 18px;
+  width: auto;
+  position: relative;
+  top: -5px;
+}
+.webHeader .actionBar {
+  width: calc(100% - 120px);
+  display: inline-block;
+  float: right;
+  height: 100%;
+  line-height: 60px;
+  padding-right: 10px;
+}
+.webHeader .actionBar .explainText {
+  font-weight: 700;
+  color: #fff;
+  font-size: 13px;
+  margin: 0 4px;
+}
+.webHeader .actionBar input {
+  height: 34px;
+  width: calc(100% - 260px);
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 5px;
+  padding-right: 52px;
+  box-sizing: border-box;
+  margin-right: 3px;
+  -webkit-transition: background-color 400ms linear;
+  -moz-transition: background-color 400ms linear;
+  -o-transition: background-color 400ms linear;
+  -ms-transition: background-color 400ms linear;
+  transition: background-color 400ms linear;
+}
+.webHeader .actionBar input.highlight {
+  background-color: #dcda56;
+}
+.webHeader .actionBar .addActionButton,
+.webHeader .actionBar .resetButton {
+  border-radius: 4px;
+  background-color: #3b5361;
+  border: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 22px;
+  padding: 0px 12px;
+  padding-bottom: 8px;
+  display: inline-block;
+  cursor: pointer;
+}
+.webHeader .actionBar .addActionButton {
+  font-size: 22px;
+  position: relative;
+  top: -1px;
+  padding-bottom: 11px;
+}
+.webHeader .actionBar .addActionButton i {
+  font-size: 22px;
+  position: relative;
+  top: 6px;
+}
+.webHeader .actionBar .resetButton {
+  color: #3b5361;
+  background-color: transparent;
+  margin-left: -35px;
+  display: inline-block;
+  line-height: 15px;
+  padding: 7px 7px;
+  margin-right: 10px;
+}
+.webHeader .drop {
+  position: relative;
+}
+.webHeader .drop span.title {
+  line-height: 31px;
+  padding: 0 7px;
+  font-size: 12px;
+  padding-bottom: 2px;
+  font-weight: 800;
+  width: 110px;
+  display: inline-block;
+  color: #fff;
+  background: #3b5361;
+  border-radius: 4px;
+}
+.webHeader .drop span.title:after {
+  content: '▼';
+  font-size: 8px;
+  line-height: 33px;
+  position: absolute;
+  right: 10px;
+}
+.webHeader .drop ul {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: 0 0;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 8px 0 rgba(0,0,0,0.12);
+  background: #fff;
+}
+.webHeader .drop ul li {
+  display: block;
+  width: 100%;
+  height: 32px;
+}
+.webHeader .drop ul li:hover {
+  background: #bbb;
+}
+.webHeader .drop ul li span {
+  width: 100%;
+  padding: 0 9px;
+  display: inline-block;
+  height: 100%;
+  white-space: pre;
+  box-sizing: border-box;
+  cursor: pointer;
+  transform: translateY(-12px);
+}
+.webHeader .drop:hover ul {
+  transform: scale(1);
+}
+.urlHeader {
+  height: 40px;
+  background: #d8d8d8;
+}
+.urlHeader input {
+  background: #fff;
+  border-radius: 4px;
+  padding-left: 11px;
+  height: 70%;
+  margin-left: 5px;
+  margin-top: 6px;
+  width: calc(100% - 50px);
+  font-family: "Titillium Web";
+  font-weight: 400;
+  font-size: 0.9em;
+  outline: none;
+}
+.urlHeader .reload {
+  margin-left: 5px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+.editorContainer {
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  background-color: #1d1f21;
+  overflow: hidden;
+}
+.steps .step {
+  margin: 10px;
+  padding: 5px 10px;
+  padding-right: 57px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 4px;
+  position: relative;
+}
+.steps .step i {
+  padding-right: 10px;
+}
+.steps .step .actionButtons {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 16px;
+  line-height: 37px;
+}
+.steps .step .actionButtons span {
+  margin-left: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.steps .step .edit {
+  background-color: #3a3d41;
+  padding: 9px;
+  margin-right: -49px;
+  margin-top: 10px;
+}
+.steps .step .edit span {
+  width: 75px;
+  display: inline-block;
+}
+.steps .step .edit input {
+  padding: 3px;
+  font-weight: 600;
+  width: calc(100% - 85px);
+}
+.web,
+.horizontalHandle,
+.editor {
+  height: 100vh;
+  display: inline-block;
+}
+.web {
+  background-color: #cfd2d4;
+  flex-grow: 1;
+  height: 100vh;
+}
+.web iframe {
+  width: 100%;
+  height: calc(100% - 75px - 25px);
+}
+.web iframe.resizing {
+  pointer-events: none;
+}
+.horizontalHandle {
+  width: 10px;
+  background-color: #000;
+  cursor: col-resize;
+}
+.verticalHandle {
+  height: 10px;
+  width: 100%;
+  background-color: #000;
+  cursor: row-resize;
+}
+.editor {
+  resize: horizontal;
+}
+.editor .actionBar {
+  width: 100%;
+  background-color: #1d1f21;
+  border-top: 1px solid #4d5257;
+  border-bottom: 1px solid #4d5257;
+  height: 60px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.editor .actionBar .button {
+  color: #b5bc6d;
+  border: 1px solid #b5bc6d;
+  border-radius: 3px;
+  font-weight: 500;
+  font-family: "Titillium Web";
+  padding: 5px 8px;
+  cursor: pointer;
+  margin-top: 13px;
+  display: inline-block;
+}
+.editor .actionBar .continueButton {
+  width: 130px;
+  float: right;
+  margin-right: 10px;
+}
+.editor textarea {
+  width: calc(100% - 10px);
+  height: calc(100% - 260px - 25px);
+  margin: 5px;
+  font-size: 1.2em;
+  font-family: monospace;
+}
+.editor textarea:focus {
+  outline: none;
+}
+.editor .result {
+  height: 200px;
+  width: 100%;
+  display: inline-block;
+  background-color: #f0f0f0;
+}

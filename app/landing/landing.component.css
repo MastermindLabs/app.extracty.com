@@ -1,0 +1,144 @@
+.landing {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.headerBlock {
+  background: #393736;
+  padding-top: 30px;
+  text-align: center;
+}
+.headerBlock .logo {
+  font-family: "BebasNeueBold";
+  font-size: 46px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+}
+.headerBlock .headline {
+  text-align: center;
+  padding-top: 120px;
+  font-family: "Titillium Web";
+  font-weight: 100;
+  font-size: 55px;
+  color: #fff;
+}
+.headerBlock .subHeadline {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+}
+.headerBlock .url {
+  margin-left: 50%;
+  transform: translateX(-51%);
+  width: 70vw;
+  max-width: 850px;
+  margin-top: 1.5em;
+  position: relative;
+}
+.headerBlock .url input[type="text"] {
+  margin-top: 60px;
+  width: calc(100% - 55px);
+  padding: 0.6em 50px 0.6em 0.6em;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+.headerBlock .url input[type="text"]:focus {
+  outline: none;
+}
+.headerBlock .url .icon {
+  margin-top: 60px;
+  position: absolute;
+  top: 0.4em;
+  right: 0.35em;
+  height: 3em;
+  color: #1d1f21;
+  font-size: 1.5em;
+  border-radius: 5px;
+  border: 0;
+}
+.headerBlock .landing-explain {
+  margin-top: 120px;
+  margin-bottom: 120px;
+  width: 400px;
+  margin-left: -5px;
+  max-width: calc(100vw - 40px);
+  height: auto;
+}
+h2 {
+  font-weight: 200;
+  font-family: "Titillium Web";
+  font-size: 24px;
+  margin-top: 80px;
+  margin-bottom: 60px;
+  color: #000;
+  max-width: 850px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.box {
+  width: calc(100% - 80px);
+  max-width: 850px;
+  background-color: #fff;
+  padding: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.box .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  font-family: "Titillium Web";
+  font-weight: 700;
+  font-size: 34px;
+  color: #fff;
+  padding-top: 15px;
+  box-sizing: border-box;
+  margin-left: -30px;
+  margin-top: -30px;
+  background: #6392cb;
+  border-radius: 100px;
+  color: #fff;
+}
+.box h4 {
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-size: 30px;
+  color: #000;
+}
+.box p {
+  font-weight: 100;
+  margin-top: 40px;
+  font-size: 1.3em;
+}
+.box img {
+  width: 400px;
+  max-width: 80%;
+  margin-top: 70px;
+}
+.triangle {
+  width: 62px;
+  height: auto;
+  margin: 40px 0;
+}
+hr {
+  width: 80%;
+  background-color: #e7e7e7;
+  height: 1px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  margin-top: 80px;
+}
+.footer {
+  white-space: pre;
+  margin: 40px 0;
+  font-size: 20px;
+  color: #a5a5a5;
+}

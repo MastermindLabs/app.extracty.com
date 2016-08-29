@@ -1,0 +1,49 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #e6e6e6;
+  font-family: Titillium Web;
+}
+.container .loginContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 500px;
+  background-color: #fff;
+  margin-top: -300px;
+  margin-left: -200px;
+  text-align: center;
+}
+.container .loginContainer .topbar {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  background-color: #323232;
+  font-size: 18px;
+}
+.container .loginContainer .auth-icon {
+  width: 90px;
+  height: auto;
+  margin-top: 40px;
+}
+.container .loginContainer p {
+  margin-top: 30px;
+  padding: 20px 40px;
+  font-weight: 100;
+}
+.container .loginContainer .loginButton {
+  background-color: #505050;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 10px 19px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 40px;
+  font-size: 14px;
+  transform: translateX(-50%);
+  cursor: pointer;
+}

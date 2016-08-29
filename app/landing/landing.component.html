@@ -1,0 +1,40 @@
+<div class="landing">
+  <div class="headerBlock">
+    <h3 class="logo">Extracty</h3>
+    <h1 class="headline">Web data extraction for developers.</h1>
+    <p class="subHeadline">Enter the data source url to get started.</p>
+    <div class="url">
+      <input type="text" (keyup.enter)="createEndpoint()" placeholder="Enter URL" [(ngModel)]="url">
+      <i (click)="createEndpoint()" class="icon ion-wand"></i>
+    </div>
+
+    <img class="landing-explain" src="assets/images/landing-explain.png" />
+  </div>
+
+  <h2>Extracty lets you easily extract data from any webpage and turn it into an API, export it, visualize it or create hooks.</h2>
+
+  <div class="box">
+    <p class="number">1</p>
+    <h4>Specify extraction selectors and action flows.</h4>
+    <p>Simply click the elements you want to extract and extracty will generate a matching selector for you. Specify actions to be executed on the result.</p>
+    <img src="assets/images/landing-screenshot1.png" />
+  </div>
+  <img class="triangle" src="assets/images/triangle.png" />
+  <div class="box">
+    <p class="number">2</p>
+    <h4>Update the generated code and add business logic.</h4>
+    <p>Extracty lets you update the code it generated to give you full control. This lets you add custom logic and </p>
+    <img src="assets/images/landing-screenshot2.png" />
+  </div>
+  <img class="triangle" src="assets/images/triangle.png" />
+  <div class="box">
+    <p class="number">3</p>
+    <h4>Choose output options and start rocking!</h4>
+    <p>Currently extracty supports accessing the latest data through an API and as a CSV export.</p>
+    <img src="assets/images/landing-screenshot3.png" />
+  </div>
+
+  <hr>
+
+  <p class="footer">© 2016, Extracty   ★   Terms of Service   ★   Privacy Policy   ★   Blog</p>
+</div>

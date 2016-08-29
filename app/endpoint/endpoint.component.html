@@ -1,0 +1,68 @@
+<sidebar>
+  <h1>
+    <img src="assets/logo.png" />
+  </h1>
+  <span class="createEndpointButton" (click)="createEndpoint()">CREATE ENDPOINT</span>
+  <div class="endpoints">
+    <div class="endpointItem" *ngFor='let endpointItem of endpoints' [ngClass]="{active: endpointItem.id === endpoint.id}" (click)="openEndpoint(endpointItem)">
+      <p class="name" [innerText]="endpointItem.name"></p>
+      <p class="subtext">{{endpointItem.totalExecutions}} Executions</p>
+    </div>
+  </div>
+
+  <div class="bottom">
+
+    <div class="usedView" title="This is your allowed quota per month.">
+      <div class="meter">
+         <span [ngStyle]="{'width': (user.totalUsedAPIAccess/user.totalAPIAccess*100) + '%'}"></span>
+       </div>
+     <span class="quotaLabel"># Executions</span>
+     <span class="quota"><sp [innerText]="user.totalUsedAPIAccess"></sp>/<sp [innerText]="user.totalAPIAccess"></sp></span>
+    </div>
+
+    <span class="logout" (click)="logout()">Logout</span>
+  </div>
+
+</sidebar>
+<endpoint-view *ngIf="endpoint">
+  <input class="headline" (blur)="updateName()" [(ngModel)]="endpoint.name" />
+
+
+  <span class="editButton" (click)="editEndpoint()">EDIT LOGIC</span>
+
+  <h3>USE ENDPOINT</h3>
+
+  <p class="languageSelect">
+    <span (click)="activeLanguage='http'" [ngClass]="{'active': activeLanguage==='http'}">HTTP</span>
+    <span (click)="activeLanguage='js'" [ngClass]="{'active': activeLanguage==='js'}">JavaScript</span>
+    <span (click)="activeLanguage='curl'" [ngClass]="{'active': activeLanguage==='curl'}">Curl</span>
+    <span (click)="activeLanguage='node'" [ngClass]="{'active': activeLanguage==='node'}">Node</span>
+    <span (click)="activeLanguage='php'" [ngClass]="{'active': activeLanguage==='php'}">PHP</span>
+    <span (click)="activeLanguage='python2'" [ngClass]="{'active': activeLanguage==='python2'}">Python 2</span>
+    <span (click)="activeLanguage='python3'" [ngClass]="{'active': activeLanguage==='python3'}">Python 3</span>
+    <span (click)="activeLanguage='ruby'" [ngClass]="{'active': activeLanguage==='ruby'}">Ruby</span>
+    <span (click)="activeLanguage='r'" [ngClass]="{'active': activeLanguage==='r'}">R</span>
+    <span (click)="activeLanguage='go'" [ngClass]="{'active': activeLanguage==='go'}">Go</span>
+  </p>
+
+  <div class="code">
+    <span *ngIf="activeLanguage==='http'" [innerHTML]="codeSnippets[activeLanguage]">HTTP</span>
+    <span *ngIf="!(activeLanguage==='http')" [innerText]="codeSnippets[activeLanguage]"></span>
+  </div>
+
+  <h3>LATEST RESULT</h3>
+
+  <div ace-editor
+       [text]="result"
+       [mode]="'json'"
+       [theme]="'tomorrow'"
+       [options]="{showGutter: false, highlightActiveLine: false}"
+       [readOnly]="true"
+       id="resultView"></div>
+
+   <div class="deleteArea">
+     <p>Want to delete the endpoint? Type in 'DELETE' and press the delete button.</p>
+     <input [(ngModel)]="deleteText"/>
+     <span (click)="deleteEndpoint()">DELETE</span>
+   </div>
+</endpoint-view>

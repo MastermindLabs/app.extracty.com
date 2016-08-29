@@ -1,0 +1,218 @@
+sidebar {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  height: 100vh;
+  background: #fbfbfb;
+  box-shadow: -1px 5px 2px 1px rgba(154,151,151,0.5);
+}
+sidebar .endpoints {
+  height: calc(100% - 240px);
+  overflow: scroll;
+}
+sidebar h1 {
+  font-family: "BebasNeueBold";
+  font-size: 26px;
+  text-align: center;
+  padding-top: 28px;
+  padding-bottom: 25px;
+  background: #63acd6;
+  letter-spacing: -0.59px;
+  color: #fff;
+}
+sidebar h1 img {
+  height: 18px;
+  width: auto;
+  position: relative;
+}
+sidebar .endpointItem {
+  padding: 15px 30px;
+  cursor: pointer;
+}
+sidebar .endpointItem.active {
+  background-color: #e1f0f9;
+}
+sidebar .endpointItem .name {
+  font-family: "Titillium Web";
+  font-size: 15px;
+  font-weight: 600;
+  color: #38495f;
+}
+sidebar .endpointItem .subtext {
+  font-family: "Titillium Web";
+  font-size: 12px;
+  color: #38495f;
+}
+sidebar .createEndpointButton {
+  display: inline-block;
+  text-align: center;
+  padding: 5px 5px;
+  margin: 10px 0;
+  background: #63cb92;
+  width: calc(100% - 20px);
+  box-sizing: border-box;
+  margin-left: 10px;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 36px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+sidebar .bottom {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+sidebar .bottom .logout {
+  position: absolute;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  color: #2f5063;
+}
+sidebar .bottom .usedView {
+  top: -50px;
+  position: relative;
+  z-index: 1000;
+  color: #ababab;
+}
+sidebar .bottom .usedView .meter {
+  height: 10px; /* Can be anything */
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 2px;
+  padding: 1px;
+  width: 230px;
+  left: 30px;
+  top: 10px;
+}
+sidebar .bottom .usedView .meter span {
+  display: block;
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  background-color: #ababab;
+  position: relative;
+  overflow: hidden;
+  left: 0px;
+  width: 0%;
+}
+sidebar .bottom .usedView .quota {
+  float: right;
+  margin-top: 13px;
+  margin-right: 40px;
+  text-align: right;
+  font-size: 0.7em;
+  opacity: 0.8;
+}
+sidebar .bottom .usedView .quotaLabel {
+  padding-left: 30px;
+  position: relative;
+  float: left;
+  font-size: 0.72em;
+  margin-top: 12px;
+  font-weight: 400;
+}
+endpoint-view {
+  width: calc(100% - 305px);
+  height: 100vh;
+  overflow: scroll;
+  padding: 24px 50px;
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+}
+endpoint-view input.headline {
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 29px;
+  width: calc(100% - 100px);
+}
+endpoint-view .editButton {
+  position: absolute;
+  right: 50px;
+  top: 24px;
+  padding: 10px 15px;
+  display: block;
+  background: #63cb92;
+  border-radius: 6px;
+  font-family: TitilliumWeb-Bold;
+  font-size: 13px;
+  color: #fff;
+  cursor: pointer;
+}
+endpoint-view .deleteArea p {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #808080;
+}
+endpoint-view .deleteArea input {
+  border-radius: 3px;
+  padding: 9px;
+  margin-right: 10px;
+  background-color: #e2e2e2;
+  font-weight: 600;
+}
+endpoint-view .deleteArea span {
+  padding: 7px 10px;
+  background: #dc7070;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+endpoint-view h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #717171;
+  font-size: 0.9em;
+}
+endpoint-view .languageSelect {
+  margin-bottom: 20px;
+}
+endpoint-view .languageSelect span {
+  padding: 5px 10px;
+  cursor: pointer;
+  line-height: 35px;
+}
+endpoint-view .languageSelect span.active {
+  background-color: #def1fd;
+  border-radius: 4px;
+}
+endpoint-view .code {
+  background-color: #f4f7fa;
+  padding: 10px;
+}
+endpoint-view .code span {
+  font-family: 'Source Code Pro';
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+endpoint-view .code >>> a {
+  color: #216173;
+  text-decoration: none;
+}
+endpoint-view #resultView {
+  display: block;
+  height: 300px;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 3px;
+}
+endpoint-view #resultView >>> .ace_cursor {
+  display: none;
+}
+endpoint-view .tip {
+  margin-top: 30px;
+  display: block;
+}
+endpoint-view .tip a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+}
