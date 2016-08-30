@@ -226,13 +226,14 @@
   margin-top: 10px;
 }
 .steps .step .edit span {
-  width: 75px;
+  width: 85px;
   display: inline-block;
 }
 .steps .step .edit input {
   padding: 3px;
   font-weight: 600;
-  width: calc(100% - 85px);
+  width: calc(100% - 96px);
+  margin-left: 5px;
 }
 .web,
 .horizontalHandle,
@@ -273,7 +274,6 @@
   border-bottom: 1px solid #4d5257;
   height: 60px;
   box-sizing: border-box;
-  text-align: center;
 }
 .editor .actionBar .button {
   color: #b5bc6d;
@@ -285,9 +285,10 @@
   cursor: pointer;
   margin-top: 13px;
   display: inline-block;
+  margin-left: 10px;
 }
 .editor .actionBar .continueButton {
-  width: 130px;
+  width: 120px;
   float: right;
   margin-right: 10px;
 }

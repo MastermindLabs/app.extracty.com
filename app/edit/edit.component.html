@@ -1,9 +1,9 @@
 <div class="editorContainer">
   <div class="web" id="leftBlock">
     <div class="webHeader">
-      <span class="logo">
+      <a href="/view"><span class="logo">
         <img src="assets/logo.png" />
-      </span>
+      </span></a>
       <div class="actionBar">
         <span class="explainText">Select </span> <input id="selectedPath" placeholder="[css selector]" [(ngModel)]="selectedPath" />
         <span class="resetButton" (click)="clearPath()"><i class="icon ion-close-circled"></i></span>
@@ -42,18 +42,34 @@
           <span><i class="icon ion-edit" (click)="step.showEdit = !step.showEdit"></i></span><span><i class="icon ion-ios-trash" (click)="removeStep(i)"></i></span>
         </span>
         <div class="edit" *ngIf="step.showEdit">
-          <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
-          <p *ngIf="step.property"><span>Property:</span><input [(ngModel)]="step.property"/><p>
-          <p *ngIf="step.property">The value can be set by supplying the get parameter '{{step.parameter}}'<p>
-          <div *ngIf="step.action === 'custom code'" ace-editor
-               [text]="step.property"
-               [mode]="'javascript'"
-               [theme]="'tomorrow_night'"
-               [options]="editorOptions"
-               [readOnly]="false"
-               (textChanged)="codeChanged($event)"
-               style="display:block; height: 80vh; width:100%" id="editor"></div>
-        </div>
+          <div *ngIf="step.action == 'extract the text'">
+            <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
+            <p *ngIf="step.property"><span>Result field:</span><input [(ngModel)]="step.property"/><p>
+          </div>
+          <div *ngIf="step.action == 'Open URL'">
+            <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
+            <p *ngIf="step.property"><span>Property:</span><input [(ngModel)]="step.property"/><p>
+          </div>
+          <div *ngIf="step.action == 'click element'">
+            <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
+            <p *ngIf="step.property"><span>Property:</span><input [(ngModel)]="step.property"/><p>
+          </div>
+          <div *ngIf="step.action == 'enter text'">
+            <p *ngIf="step.selector"><span>Selector:</span><input [(ngModel)]="step.selector"/><p>
+            <p *ngIf="step.property"><span>Property:</span><input [(ngModel)]="step.property"/><p>
+            <p *ngIf="step.property">The value can be set by supplying the get parameter '{{step.parameter}}'<p>
+          </div>
+          <div *ngIf="step.action == 'custom code'">
+            <div ace-editor
+                 [text]="step.property"
+                 [mode]="'javascript'"
+                 [theme]="'tomorrow_night'"
+                 [options]="editorOptions"
+                 [readOnly]="false"
+                 (textChanged)="codeChanged($event, step)"
+                 style="display:block; max-height: calc(100% - 48px); height: 200px; width:100%" id="editor"></div>
+           </div>
+         </div>
       </div>
     </div>
     <div class="verticalHandle" id="verticalHandle" (mousedown)="resize($event, 'horizontal', 'steps', 'result')"></div>
