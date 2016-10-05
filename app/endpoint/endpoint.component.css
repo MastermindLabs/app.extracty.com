@@ -14,14 +14,14 @@ sidebar h1 {
   font-family: "BebasNeueBold";
   font-size: 26px;
   text-align: center;
-  padding-top: 28px;
-  padding-bottom: 25px;
+  padding-top: 13px;
+  padding-bottom: 10px;
   background: #63acd6;
   letter-spacing: -0.59px;
   color: #fff;
 }
 sidebar h1 img {
-  height: 18px;
+  height: 50px;
   width: auto;
   position: relative;
 }
@@ -140,7 +140,7 @@ endpoint-view .editButton {
   display: block;
   background: #63cb92;
   border-radius: 6px;
-  font-family: TitilliumWeb-Bold;
+  font-family: Titillium Web;
   font-size: 13px;
   color: #fff;
   cursor: pointer;
