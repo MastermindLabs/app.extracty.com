@@ -28,7 +28,9 @@
   <div class="editor" id="rightBlock">
     <div class="actionBar">
       <span (click)="execute(code)" class="executeButton button">Execute</span>
-      <span (click)="continue()" class="continueButton button" *ngIf="showDoneButton">Done, create API!</span>
+      <span (click)="continue()" class="continueButton button" *ngIf="isEditing && showDoneButton" style="width: auto;">Save</span>
+      <span (click)="cancelEdit()" class="continueButton button" *ngIf="isEditing" style="width: auto; color: #7b828a; border-color: #7b828a;">Cancel editing</span>
+      <span (click)="continue()" class="continueButton button" *ngIf="!isEditing && showDoneButton">Done, create API!</span>
     </div>
     <div class="steps" id="steps">
 
@@ -73,10 +75,14 @@
       </div>
     </div>
     <div class="verticalHandle" id="verticalHandle" (mousedown)="resize($event, 'horizontal', 'steps', 'result')"></div>
+    <div class="tabs" style="height: 30px; background-color: #292b2e; width: 100%; text-align: center">
+      <span [ngClass]="{'activeTab': resultTabActive}" (click)="toggleResultView(true)" class="resultTab" >Result</span>
+      <span (click)="toggleResultView(false)" [ngClass]="{'activeTab': !resultTabActive}" class="resultTab" >Logs</span>
+    </div>
 
 
     <div ace-editor
-         [(text)]="result"
+         [(text)]="resultBoxText"
          [mode]="'json'"
          [theme]="'tomorrow_night'"
          [options]="resultOptions"
